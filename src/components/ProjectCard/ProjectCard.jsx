@@ -1,11 +1,17 @@
-function ProjectCard({ title, description, image, link }) {
+function ProjectCard({ img, title, description, tools, cardClass, imgClass }) {
   return (
-    <article>
-      {image && <img src={image} alt={title} />}
-      <h3>{title}</h3>
-      <p>{description}</p>
-      {link && <a href={link} target="_blank" rel="noopener noreferrer">View Project</a>}
-    </article>
+    <div className={cardClass}>
+      {img && <img src={img} alt={title} className={imgClass} />}
+      <h3 className="chrome-text">{title}</h3>
+      {description && <p className={cardClass === 'phone-card' ? 'phone-desc' : ''}>{description}</p>}
+      {tools && (
+        <div className="project-programs">
+          {tools.map((tool) => (
+            <span key={tool}>{tool}</span>
+          ))}
+        </div>
+      )}
+    </div>
   )
 }
 
