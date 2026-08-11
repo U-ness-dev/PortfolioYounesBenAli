@@ -358,10 +358,9 @@ body.cursor-hover .cursor__dot {
 
 .about__portrait {
   width: 100%;
-  aspect-ratio: 4 / 5;
-  background: var(--surface);
+  max-width: 320px;
+  aspect-ratio: 1 / 1;
   position: relative;
-  overflow: hidden;
 }
 
 .about__statement {

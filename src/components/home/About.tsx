@@ -16,7 +16,7 @@ export default function About() {
         <div data-reveal>
           <div className="about__portrait">
             <img
-              src="/images/portrait.svg"
+              src="/images/Me_Pic.png"
               alt={`Portrait of ${profile.name}`}
               loading="lazy"
               decoding="async"
@@ -24,7 +24,7 @@ export default function About() {
             />
           </div>
           <p className="meta" style={{ marginTop: '0.8rem' }}>
-            Portrait — placeholder
+            {profile.name}
           </p>
         </div>
 
