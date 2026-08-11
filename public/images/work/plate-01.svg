@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800">
+  <rect width="1200" height="800" fill="#141513"/>
+  <g stroke="#3a3b35" stroke-width="1" fill="none">
+    <rect x="80" y="80" width="1040" height="640"/>
+    <rect x="120" y="120" width="960" height="560"/>
+    <rect x="160" y="160" width="880" height="480"/>
+  </g>
+  <g stroke="#d8d5c8" stroke-width="1" opacity="0.35">
+    <line x1="80" y1="400" x2="1120" y2="400"/>
+    <line x1="400" y1="80" x2="400" y2="720"/>
+    <line x1="800" y1="80" x2="800" y2="720"/>
+  </g>
+  <rect x="640" y="280" width="160" height="240" fill="#c9a66b"/>
+  <text x="112" y="356" font-family="Georgia, serif" font-size="44" fill="#d8d5c8" letter-spacing="4">NORD</text>
+  <text x="112" y="396" font-family="Courier, monospace" font-size="16" fill="#6e7168" letter-spacing="3">ARCHITECTURE — 2025</text>
+</svg>

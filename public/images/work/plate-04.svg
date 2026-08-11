@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800">
+  <rect width="1200" height="800" fill="#131412"/>
+  <polygon points="600,80 1120,400 600,720 80,400" fill="none" stroke="#d8d5c8" stroke-width="1" opacity="0.3"/>
+  <polygon points="600,160 1060,400 600,640 140,400" fill="none" stroke="#d8d5c8" stroke-width="1" opacity="0.2"/>
+  <polygon points="600,400 860,532 600,664 340,532" fill="#c9a66b" opacity="0.85"/>
+  <polygon points="600,400 420,486 600,572 780,486" fill="#141513"/>
+  <line x1="600" y1="80" x2="600" y2="720" stroke="#d8d5c8" stroke-width="1" opacity="0.5"/>
+  <text x="80" y="92" font-family="Courier, monospace" font-size="16" fill="#6e7168" letter-spacing="3">TERRAIN — MATERIAL STUDIES 04</text>
+</svg>
