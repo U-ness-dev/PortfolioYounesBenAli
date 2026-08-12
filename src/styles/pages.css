@@ -264,6 +264,22 @@
   width: 100%;
 }
 
+.project__hero .iimg.media--logo {
+  aspect-ratio: auto;
+  width: min(38vw, 420px);
+  height: auto;
+  margin-inline: auto;
+}
+
+.project__hero .iimg.media--logo .iimg__inner,
+.project__hero .iimg.media--logo .iimg__media {
+  height: auto;
+}
+
+.project__hero .iimg.media--logo .iimg__media {
+  object-fit: contain;
+}
+
 .project__back {
   display: inline-flex;
   align-items: center;

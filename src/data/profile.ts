@@ -46,12 +46,11 @@ export const profile: Profile = {
 		},
 	],
 	statement: [
-		"I design identities, interfaces and interactive experiences that feel considered, precise and slightly alive.",
-		"I work across branding, digital products & 3D Design — from the first sketch to the last line of code.",
+		"I'm always open to new ideas and believe that the best results come from working together. ",
+		"Each project is a chance to learn, grow, and create something special.",
 	],
 	about: [
-		"I am a graphic designer, developer & 3D artist based in Belgium, trained in graphic design at Erasmushogeschool Brussel and self-taught in code. My practice sits between the printed page and the browser",
-		"I care about the details people feel rather than notice: spacing, pacing, the weight of a title, the timing of a transition. Most of my work lives at the intersection of design and development, where the two disciplines sharpen each other.",
+		"My name is Younes Ben Ali, a creative graphic designer, 3D artist, and coder with a strong eye for detail and a love for visual storytelling. I enjoy helping brands and entrepreneurs bring their ideas to life through unique and meaningful designs",
 	],
 	education: [
 		{

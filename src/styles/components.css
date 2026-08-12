@@ -323,6 +323,15 @@ body.cursor-hover .cursor__dot {
   transition: transform 0.6s var(--ease-out);
 }
 
+.work-preview.media--logo {
+  padding: clamp(14px, 1.5vw, 22px);
+}
+
+.work-preview.media--logo img {
+  object-fit: contain;
+  transform: none;
+}
+
 .work-row:hover .work-preview img {
   transform: scale(1);
 }

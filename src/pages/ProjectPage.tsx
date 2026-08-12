@@ -105,6 +105,7 @@ export default function ProjectPage() {
 				<InteractiveImage
 					src={project.media[0]?.src ?? ""}
 					alt={project.media[0]?.alt ?? project.title}
+					className={project.media[0]?.className}
 					eager
 				/>
 			</div>
@@ -123,7 +124,11 @@ export default function ProjectPage() {
 						</p>
 						{chapter.media?.map((m) => (
 							<figure className="chapter__media" key={m.src} data-reveal>
-								<InteractiveImage src={m.src} alt={m.alt} />
+								<InteractiveImage
+									src={m.src}
+									alt={m.alt}
+									className={m.className}
+								/>
 								<figcaption className="meta chapter__caption">
 									{m.alt}
 								</figcaption>

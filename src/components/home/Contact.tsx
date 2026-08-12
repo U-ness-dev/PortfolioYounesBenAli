@@ -125,7 +125,7 @@ export default function Contact() {
               <textarea
                 id="message"
                 required
-                placeholder="Tell me about your project…"
+                placeholder="Ask me anything…"
                 value={form.message}
                 onChange={handleChange}
               />

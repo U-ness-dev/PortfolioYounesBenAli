@@ -93,7 +93,11 @@ function WorkRow({ project, index }: { project: Project; index: number }) {
           <span className="meta">{project.year}</span>
         </span>
       </div>
-      <div className="work-preview" ref={previewRef} aria-hidden="true">
+      <div
+        className={`work-preview${project.media[0]?.className ? ` ${project.media[0].className}` : ''}`}
+        ref={previewRef}
+        aria-hidden="true"
+      >
         <img src={project.media[0]?.src} alt="" loading="lazy" decoding="async" />
       </div>
     </Link>
