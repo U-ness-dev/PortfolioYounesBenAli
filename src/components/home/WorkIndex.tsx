@@ -5,6 +5,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { projects, type Project } from '../../data/projects'
 import { useDevicePrefs } from '../../hooks/useDevicePrefs'
 import { useTransition } from '../Transition'
+import { asset } from '../../lib/asset'
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -98,7 +99,7 @@ function WorkRow({ project, index }: { project: Project; index: number }) {
         ref={previewRef}
         aria-hidden="true"
       >
-        <img src={project.media[0]?.src} alt="" loading="lazy" decoding="async" />
+        <img src={asset(project.media[0]?.src)} alt="" loading="lazy" decoding="async" />
       </div>
     </Link>
   )

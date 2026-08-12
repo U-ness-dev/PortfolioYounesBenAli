@@ -1,4 +1,5 @@
 import { profile } from '../../data/profile'
+import { asset } from '../../lib/asset'
 
 export default function About() {
   return (
@@ -16,7 +17,7 @@ export default function About() {
         <div data-reveal>
           <div className="about__portrait">
             <img
-              src="/images/Me_Pic.png"
+              src={asset('/images/Me_Pic.png')}
               alt={`Portrait of ${profile.name}`}
               loading="lazy"
               decoding="async"

@@ -1,6 +1,7 @@
 import { useEffect, useRef } from 'react'
 import gsap from 'gsap'
 import { useDevicePrefs } from '../hooks/useDevicePrefs'
+import { asset } from '../lib/asset'
 
 interface InteractiveImageProps {
   src: string
@@ -56,7 +57,7 @@ export default function InteractiveImage({
       <div className="iimg__inner">
         <img
           className="iimg__media"
-          src={src}
+          src={asset(src)}
           alt={alt}
           loading={eager ? 'eager' : 'lazy'}
           decoding="async"
