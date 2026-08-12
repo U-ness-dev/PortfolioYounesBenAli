@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800">
+  <rect width="1200" height="800" fill="#141513"/>
+  <circle cx="600" cy="400" r="330" fill="none" stroke="#d8d5c8" stroke-width="1" opacity="0.5"/>
+  <circle cx="600" cy="400" r="240" fill="none" stroke="#d8d5c8" stroke-width="1" opacity="0.35"/>
+  <circle cx="600" cy="400" r="150" fill="none" stroke="#d8d5c8" stroke-width="1" opacity="0.25"/>
+  <rect x="540" y="340" width="120" height="120" fill="#c9a66b"/>
+  <text x="300" y="740" font-family="Courier, monospace" font-size="16" fill="#6e7168" letter-spacing="3">MARAIS — GALLERY GUIDE</text>
+  <line x1="80" y1="720" x2="1120" y2="720" stroke="#3a3b35" stroke-width="1"/>
+</svg>
