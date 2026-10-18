@@ -332,6 +332,19 @@ body.cursor-hover .cursor__dot {
   transform: none;
 }
 
+.work-preview.media--small {
+  transition: padding 0.6s var(--ease-out);
+}
+
+.work-preview.media--small img {
+  transform: none;
+  object-fit: contain;
+}
+
+.work-row:hover .work-preview.media--small {
+  padding: clamp(18px, 3vw, 40px);
+}
+
 .work-row:hover .work-preview img {
   transform: scale(1);
 }

@@ -280,6 +280,33 @@
   object-fit: contain;
 }
 
+.project__hero .iimg.media--small,
+.chapter__media .iimg.media--small {
+  aspect-ratio: auto;
+  height: auto;
+  margin-inline: auto;
+}
+
+.project__hero .iimg.media--small {
+  width: min(60vw, 520px);
+}
+
+.chapter__media .iimg.media--small {
+  width: min(100%, 520px);
+}
+
+.project__hero .iimg.media--small .iimg__inner,
+.chapter__media .iimg.media--small .iimg__inner,
+.project__hero .iimg.media--small .iimg__media,
+.chapter__media .iimg.media--small .iimg__media {
+  height: auto;
+}
+
+.project__hero .iimg.media--small .iimg__media,
+.chapter__media .iimg.media--small .iimg__media {
+  object-fit: contain;
+}
+
 .project__back {
   display: inline-flex;
   align-items: center;

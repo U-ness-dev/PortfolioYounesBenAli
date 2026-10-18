@@ -39,12 +39,12 @@ export const projects: Project[] = [
 		slug: "Branding",
 		title: "Leglift",
 		subtitle: "First full stack website",
-		year: "2023-2026",
+		year: "2024",
 		role: "Brand identity · Art direction",
-		disciplines: ["Branding", "Graphic design"],
-		tools: ["Illustrator", "InDesign"],
+		disciplines: ["Branding", "Graphic design", "Web design"],
+		tools: ["Illustrator", "Figma", "React", "VSCode"],
 		summary:
-			"A visual system for a studio that builds with light, shadow and plain materials.",
+			"A visual logo for fictional leg excercises website that I made for my first full stack website.",
 		statement:
 			"A logo for a leg excercises website that I made for my first full stack website.",
 		media: [
@@ -58,7 +58,7 @@ export const projects: Project[] = [
 		chapters: [
 			{
 				title: "Context",
-				body: "The studio had grown beyond its founder and needed an identity that could carry many hands. It had to feel stable, calm and slightly permanent — closer to an institution than a start-up.",
+				body: "During a course called WEB2, I was tasked to make a full stack website. I decided to make a leg excercises website called Leglift. I designed the logo and the website to be simple and easy to use.",
 				media: [
 					{
 						type: "image",
@@ -73,7 +73,7 @@ export const projects: Project[] = [
 			},
 			{
 				title: "Process",
-				body: "We built the grid first, then the wordmark, then let the system generate collateral. Letterheads, plans, sign-off sheets and a minimal presentation template all fall out of the same rulebook.",
+				body: "During the process, i gather video material from content i made myself in the fitness center. I then edited the videos and made them into gifs to be used on the website. ",
 				media: [
 					{
 						type: "image",
@@ -91,170 +91,171 @@ export const projects: Project[] = [
 	{
 		slug: "Navisgo",
 		title: "Navisgo",
-		subtitle: "An editorial web experience for new music",
+		subtitle: "An navigation app for the visually impaired",
 		year: "2024",
-		role: "Design & development",
-		disciplines: ["Web design", "Interaction"],
-		tools: ["Figma", "React", "GSAP"],
+		role: "Design Ui / UX · Interaction design",
+		disciplines: ["App design", "Interaction"],
+		tools: ["Figma"],
 		summary:
-			"A digital publication that treats listening as a spatial act — each issue is a room.",
+			"A navigation app for the visually impaired that uses audio cues and haptic feedback to guide users through their environment.",
 		statement:
-			"Cantata is a periodical about contemporary classical music. Instead of a feed, each issue is an environment you move through: score fragments, essays and recordings placed in space, revealed by scrolling and listening.",
+			"Navisgo is a navigation app for the visually impaired. It uses audio cues and haptic feedback to guide users through their environment, allowing them to navigate safely and independently.",
 		media: [
 			{
 				type: "image",
-				src: "/images/work/plate-02.svg",
-				alt: "Cantata — issue environment",
+				src: "/images/navisgo2.png",
+				alt: "Navisgo — issue environment",
+				className: "media--small",
 			},
 		],
 		chapters: [
 			{
 				title: "Context",
-				body: "The editor wanted an online home for a print magazine that could do what paper cannot: place sound next to text, and give composition a spatial dimension.",
+				body: "The visually impaired often rely on audio cues to navigate their environment. Navisgo was designed to provide a more immersive and intuitive navigation experience, using sound and haptic feedback to guide users through their surroundings.",
 			},
 			{
 				title: "Concept",
-				body: "Treat each issue as a room. Typography is set against an empty ground, and content moves at different depths — a paragraph recedes while a score fragment stays close.",
+				body: "The concept came from Google Maps, but with a focus on the visually impaired. The app uses audio cues and haptic feedback to guide users through their environment, allowing them to navigate safely and independently.",
 				media: [
 					{
 						type: "image",
-						src: "/images/work/plate-02.svg",
-						alt: "Cantata — typography studies",
+						src: "/images/navisgo3.png",
+						alt: "Navisgo — typography studies",
+						className: "media--small",
 					},
 				],
 			},
 			{
 				title: "Process",
-				body: "Prototypes explored scroll pacing: how fast sound should enter, how long a page must breathe before the next element appears. Everything tuned for attention, not retention.",
+				body: "The design process involved user testing with visually impaired individuals to gather feedback and improve the app's usability. The team iterated on the design based on user feedback, focusing on making the app as intuitive and accessible as possible.",
 			},
 			{
 				title: "Outcome",
-				body: "A publication whose rhythm slows you down. Listeners reported reading more deeply than they expected — the environment did the pacing.",
+				body: "Navisgo was successful in providing a navigation solution for the visually impaired. Users reported feeling more confident and independent when navigating their environment with the app.",
 			},
 		],
 	},
 	{
 		slug: "Flash Vision",
 		title: "Flash Vision",
-		subtitle: "A gallery guide for walking, not browsing",
+		subtitle: "A ( fictional ) telescope that can be used to travel ",
 		year: "2024",
 		role: "Product design",
 		disciplines: ["UI / UX"],
-		tools: ["Figma", "Adobe XD"],
+		tools: ["Figma", "Adobe Express"],
 		summary:
-			"A mobile companion for a Paris gallery quarter that works one-handed and outside.",
+			"Flash vision is the brand name for a fictional telescope that can be used to travel in a flash of light to reach your desired destination.",
 		statement:
-			"Marais is a wayfinding and exhibition app for a neighbourhood full of galleries. It was designed for one hand, one thumb and bright daylight — information in the fewest possible steps.",
+			"Flash vision is a fictional telescope that can be used to travel in a flash of light to reach your desired destination. The design is inspired by the idea of a telescope that can be used to travel through space and time, allowing users to reach their destination in a unique and immersive way.",
 		media: [
 			{
 				type: "image",
-				src: "/images/work/plate-03.svg",
-				alt: "Marais — mobile interface",
+				src: "/images/FlashVision.png",
+				alt: "Flash Vision — product design",
 			},
 		],
 		chapters: [
 			{
 				title: "Context",
-				body: "Gallery visitors in the Marais were juggling three apps and a printed map. The brief: a single companion that knows where you are and what is near.",
+				body: "The brief was to design a fictional product that could be used to travel through space and time. The design needed to be immersive and intuitive, allowing users to reach their destination in a unique way.	",
 			},
 			{
 				title: "Concept",
-				body: "The interface is a walking rhythm — a large, thumb-reachable primary action, and a map that only appears when you move. Reading, choosing, walking.",
+				body: "The concept was to create a fiction product and have no limitations on the design. The design is inspired by the idea of a telescope that can be used to travel through space and time, allowing users to reach their destination in a unique and immersive way.",
 				media: [
 					{
 						type: "image",
-						src: "/images/work/plate-03.svg",
-						alt: "Marais — interface studies",
+						src: "/images/FlashVisionFooter.png",
+						alt: "Flash Vision — product design",
 					},
 				],
 			},
-			{
-				title: "Process",
-				body: "User testing on the street drove every change. Buttons grew, text shrank, and the whole flow was rebuilt around a single gesture repeated.",
-			},
+
 			{
 				title: "Outcome",
-				body: "A guide visitors actually keep open. Session data showed people walking more and scrolling less — the design working as intended.",
+				body: "Flash vision was successful in providing a unique and immersive experience for users. The design was well-received and praised for its creativity and innovation.",
 			},
 		],
 	},
 	{
-		slug: "terrain",
-		title: "Terrain",
-		subtitle: "3D art direction for a materials campaign",
-		year: "2025",
-		role: "3D & motion direction",
-		disciplines: ["3D", "Art direction"],
-		tools: ["Cinema 4D", "Blender", "After Effects"],
+		slug: "Calmify",
+		title: "Calmify",
+		subtitle: "A meditation app for stress relief",
+		year: "2024",
+		role: "Product design",
+		disciplines: ["UI / UX"],
+		tools: ["Figma"],
 		summary:
-			"A campaign that photographs the weight, grain and fall of raw stone.",
+			"Calmify is a meditation app that helps users reduce stress and anxiety through guided meditation sessions and mindfulness exercises.",
 		statement:
-			"Terrain is a campaign for a quarry stone supplier. Instead of glossy renders, the work treats materials honestly — real geometry, brutal light, slow camera moves that show how stone sits in space.",
+			"Calmify is a meditation app that helps users reduce stress and anxiety through guided meditation sessions and mindfulness exercises. The app provides a variety of meditation techniques and exercises to help users relax and improve their mental well-being.",
 		media: [
 			{
 				type: "image",
-				src: "/images/work/plate-04.svg",
-				alt: "Terrain — stone studies",
+				src: "/images/Calmify.png",
+				alt: "Calmify — meditation app",
+				className: "media--small",
 			},
 		],
 		chapters: [
 			{
 				title: "Context",
-				body: "The client sells natural stone to architects. Previous campaigns looked like stock imagery; the brief was to make the material itself the hero.",
+				body: "The brief was to design a meditation app that helps users reduce stress and anxiety through guided meditation sessions and mindfulness exercises. The design needed to be calming and intuitive, allowing users to easily navigate the app and access the meditation sessions.",
 			},
 			{
 				title: "Concept",
-				body: "We shot nothing. Everything is built, lit and rendered as close to nature as possible — then graded like film, so the digital origin never shows.",
-				media: [
-					{
-						type: "image",
-						src: "/images/work/plate-04.svg",
-						alt: "Terrain — render studies",
-					},
-				],
+				body: "The concept was to create a calming and intuitive meditation app that helps users reduce stress and anxiety through guided meditation sessions and mindfulness exercises. The design is inspired by the idea of a peaceful and serene environment, allowing users to relax and improve their mental well-being.",
 			},
-			{
-				title: "Process",
-				body: "A library of procedural stone textures, a single disciplined lighting setup, and a camera language borrowed from slow documentary. Every frame earned its place.",
-			},
+
 			{
 				title: "Outcome",
-				body: "Architects requested sample boxes at a rate the client had never seen. The campaign ran across print, web and an exhibition stand.",
+				body: "Calmify was successful in providing a calming and intuitive experience for users. The design was well-received and praised for its creativity and innovation.",
 			},
 		],
 	},
 	{
-		slug: "editions-lumen",
-		title: "Éditions Lumen",
-		subtitle: "Editorial system for a publishing house",
-		year: "2023",
-		role: "Art direction · Editorial design",
-		disciplines: ["Editorial design", "Branding"],
-		tools: ["InDesign", "Illustrator"],
+		slug: "BIFFF GUIDE",
+		title: "BIFFF GUIDE",
+		subtitle:
+			"A guide feature app to report during the BIFFF festival for harassment, unsafe behavior.",
+		year: "2024",
+		role: "Art direction · Branding",
+		disciplines: [" Design", "Branding", "Coding"],
+		tools: ["Figma", "Illustrator", "VSCode", "AI"],
 		summary:
-			"A cover system where every book is a variant of the same set of rules.",
+			"A guide feature app to report during the BIFFF festival for harassment, unsafe behavior.",
 		statement:
-			"Lumen publishes essays on art and light. The identity is a single cover architecture — a grid, a horizon line, one material per title — so the catalogue reads as one continuous library.",
+			"A guide feature app to report during the BIFFF festival for harassment, unsafe behavior. The app provides a safe and anonymous way for users to report incidents and seek help.",
 		media: [
 			{
 				type: "image",
-				src: "/images/work/plate-05.svg",
-				alt: "Éditions Lumen — cover system",
+				src: "/images/biffhometemplateHome.png",
+				alt: "BIFFF GUIDE — home screen",
+				className: "media--small",
 			},
 		],
 		chapters: [
 			{
 				title: "Context",
-				body: "With a growing backlist, the house needed covers that recognised each other as family without repeating.",
-			},
-			{
-				title: "Concept",
-				body: "A fixed structure with a variable material. Each title swaps the surface — paper, varnish, foil — while the typography never moves.",
+				body: "The brief was to design a guide feature app to report during the BIFFF festival for harassment, unsafe behavior. The design needed to be intuitive and user-friendly, allowing users to easily navigate the app and access the reporting feature.",
 				media: [
 					{
 						type: "image",
-						src: "/images/work/plate-05.svg",
-						alt: "Éditions Lumen — typography",
+						src: "/images/biffhometemplate3.png",
+						alt: "BIFFF GUIDE — context",
+						className: "media--small",
+					},
+				],
+			},
+			{
+				title: "Concept",
+				body: "The concept was to create a safe and anonymous way for users to report incidents and seek help during the BIFFF festival. The design is inspired by the idea of a supportive and inclusive environment, allowing users to feel comfortable and confident in reporting incidents.",
+				media: [
+					{
+						type: "image",
+						src: "/images/biffhometemplate2.png",
+						alt: "BIFFF GUIDE — concept",
+						className: "media--small",
 					},
 				],
 			},
