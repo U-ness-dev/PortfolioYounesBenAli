@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800">
+  <rect width="1200" height="800" fill="#121311"/>
+  <g stroke="#d8d5c8" stroke-width="1" opacity="0.5">
+    <path d="M80 400 C 240 240, 360 560, 520 400 S 800 240, 960 400"/>
+  </g>
+  <g stroke="#6e7168" stroke-width="1" opacity="0.4">
+    <path d="M80 300 C 240 140, 360 460, 520 300 S 800 140, 960 300"/>
+    <path d="M80 500 C 240 340, 360 660, 520 500 S 800 340, 960 500"/>
+  </g>
+  <g fill="#c9a66b">
+    <rect x="520" y="392" width="16" height="16"/>
+    <rect x="960" y="392" width="16" height="16"/>
+  </g>
+  <text x="80" y="92" font-family="Courier, monospace" font-size="16" fill="#6e7168" letter-spacing="3">SIGNAUX — LIVE SCORE 07</text>
+  <text x="1120" y="744" font-family="Courier, monospace" font-size="14" fill="#6e7168">13:47:02</text>
+</svg>

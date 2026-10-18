@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800">
+  <rect width="1200" height="800" fill="#121311"/>
+  <g fill="#1c1d1a">
+    <rect x="80" y="120" width="1040" height="90"/>
+    <rect x="80" y="260" width="1040" height="90"/>
+    <rect x="80" y="400" width="1040" height="90"/>
+    <rect x="80" y="540" width="1040" height="90"/>
+  </g>
+  <g fill="#d8d5c8" opacity="0.9">
+    <rect x="80" y="150" width="720" height="30"/>
+    <rect x="80" y="290" width="520" height="30"/>
+    <rect x="80" y="430" width="840" height="30"/>
+    <rect x="80" y="570" width="420" height="30"/>
+  </g>
+  <rect x="840" y="120" width="280" height="90" fill="#c9a66b"/>
+  <text x="96" y="108" font-family="Courier, monospace" font-size="16" fill="#6e7168" letter-spacing="3">CANTATA — ISSUE NO. 07</text>
+</svg>
