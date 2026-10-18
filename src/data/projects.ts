@@ -259,19 +259,16 @@ export const projects: Project[] = [
 					},
 				],
 			},
-			{
-				title: "Process",
-				body: "We printed a dozen test covers in the first week to find materials that photographed and handled well. The system was locked when the structure survived every experiment.",
-			},
+			
 			{
 				title: "Outcome",
-				body: "The catalogue now reads as a library, not a shelf of accidents. Bookshops report the covers stopping browsers at the table.",
+				body: "BIFFF GUIDE was successful in providing a safe and anonymous way for users to report incidents and seek help during the BIFFF festival. The design was well-received and praised for its creativity and innovation.",
 			},
 		],
 	},
 	{
-		slug: "signaux",
-		title: "Signaux",
+		slug: "Where Are You?",
+		title: "Where Are You?",
 		subtitle: "An interactive window into urban data",
 		year: "2025",
 		role: "Concept & creative development",
