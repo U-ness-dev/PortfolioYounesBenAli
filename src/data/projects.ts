@@ -259,7 +259,7 @@ export const projects: Project[] = [
 					},
 				],
 			},
-			
+
 			{
 				title: "Outcome",
 				body: "BIFFF GUIDE was successful in providing a safe and anonymous way for users to report incidents and seek help during the BIFFF festival. The design was well-received and praised for its creativity and innovation.",
@@ -270,45 +270,70 @@ export const projects: Project[] = [
 		slug: "Where Are You?",
 		title: "Where Are You?",
 		subtitle: "An interactive window into urban data",
-		year: "2025",
-		role: "Concept & creative development",
-		disciplines: ["Creative development", "Interaction"],
-		tools: ["React", "TypeScript", "Canvas"],
+		year: "2026",
+		role: "Final Work Bachelor MCT",
+		disciplines: [
+			"Creative development",
+			"Interaction",
+			"Game design",
+			"Education",
+		],
+		tools: [
+			"Unity",
+			"C#",
+			"Blender",
+			"Figma",
+			"Illustrator",
+			"Premiere Pro",
+			"After Effects",
+			"VSCode",
+			"Blender",
+			"Maya",
+			"Substance Painter",
+		],
 		summary:
-			"A generative installation that turns city signals into a slow visual score.",
+			"For my final work for the bachelor in Media and Communication Technology, Me & Hamza Sahmoudi created an interactive 3D Game for 8-12 year olds. The project aims to improve communication skills and educate them with history without them even noticing it. The game is set in a 3D environment  where the player has to find their way to a specific location or do a specific task in the world. The players has to communicate with each other in order to find their way to the destination.",
 		statement:
-			"Signaux is an interactive piece for a public exhibition: real traffic and weather data from a city drawn as a slowly evolving composition — generative, but never decorative.",
+			"Where Are You? is an interactive 3D Game for 8-12 year olds. The project aims to improve communication skills and educate them with history without them even noticing it. The game is set in a 3D environment where the player has to find their way to a specific location or do a specific task in the world. The players has to communicate with each other in order to find their way to the destination.",
 		media: [
 			{
 				type: "image",
-				src: "/images/work/plate-06.svg",
-				alt: "Signaux — installation",
+				src: "/images/Sleutelbeeld.jpg",
+				alt: "Where Are You? — game project",
 			},
 		],
 		chapters: [
 			{
 				title: "Context",
-				body: "A festival asked for a work about the city. The idea: make the city itself the author, and the screen a patient observer.",
+				body: "History and communication skills are important for children to learn, but they can be boring and unengaging. We want wanted to create a game that would make learning history and communication skills fun and interactive. The game is set in a 3D environment where the player has to find their way to a specific location or do a specific task in the world. The players has to communicate with each other in order to find their way to the destination.",
 			},
 			{
 				title: "Concept",
-				body: "Data becomes line, rhythm and density. Traffic becomes pace, weather becomes texture — a drawing that rewrites itself every second, guided by rules rather than noise.",
+				body: "The concept came from the games R.E.P.O and Where winds meet. We wanted to create a game that would make learning history and communication skills fun and interactive. The game is set in a 3D environment where the player has to find their way to a specific location or do a specific task in the world. ",
 				media: [
 					{
 						type: "image",
-						src: "/images/work/plate-06.svg",
-						alt: "Signaux — composition studies",
+						src: "/images/Front_Texture.jpg",
+						alt: "Where Are You? — game project",
 					},
 				],
 			},
 			{
 				title: "Process",
-				body: "Built a small realtime pipeline from public data feeds to a canvas renderer, then spent the longest time on restraint: making the artwork calm when the data is loud.",
+				body: "The design process involved user testing with children to gather feedback and improve the game's usability. The team iterated on the design based on user feedback, focusing on making the game as intuitive and engaging as possible.",
 			},
 			{
 				title: "Outcome",
-				body: "Installed for three weeks, running live. Visitors stayed — which for an artwork about data is the strongest metric there is.",
+				body: "Where Are You? was successful in providing a fun and interactive way for children to learn history and communication skills. Users reported feeling more engaged and motivated to learn when playing the game.",
+					media: [
+					{
+						type: "image",
+						src: "/images/EducatiePrehistory.png",
+						alt: "Where Are You? — game project",
+					},
+				],
 			},
+			
 		],
 	},
 ];
@@ -317,7 +342,8 @@ export function getProject(slug: string): Project | undefined {
 	return projects.find((p) => p.slug === slug);
 }
 
-export function getAdjacentProject(slug: string): Project {
+export function getAdjacentProject(slug: string): Project | undefined {
 	const i = projects.findIndex((p) => p.slug === slug);
-	return projects[(i + 1) % projects.length];
+	if (i === -1 || i === projects.length - 1) return undefined;
+	return projects[i + 1];
 }

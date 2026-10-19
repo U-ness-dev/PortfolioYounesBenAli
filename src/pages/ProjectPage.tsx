@@ -8,7 +8,8 @@ import { useDevicePrefs } from "../hooks/useDevicePrefs";
 import { useScrollReveals } from "../hooks/useScrollReveals";
 
 export default function ProjectPage() {
-	const { slug } = useParams<{ slug: string }>();
+	const { slug: rawSlug } = useParams<{ slug: string }>();
+	const slug = rawSlug ? decodeURIComponent(rawSlug) : undefined;
 	const project = slug ? getProject(slug) : undefined;
 	const ref = useRef<HTMLElement>(null);
 	const { fine, reduced } = useDevicePrefs();
@@ -139,17 +140,28 @@ export default function ProjectPage() {
 			</div>
 
 			<div className="container project__end">
-				<Link
-					to={`/work/${next.slug}`}
-					className="project__next"
-					onClick={(e) => {
-						e.preventDefault();
-						begin(`/work/${next.slug}`);
-					}}
-				>
-					<span className="meta project__next-label">Next project</span>
-					<span className="project__next-title">{next.title}</span>
-				</Link>
+				{next ? (
+					<Link
+						to={`/work/${encodeURIComponent(next.slug)}`}
+						className="project__next"
+						onClick={(e) => {
+							e.preventDefault();
+							begin(`/work/${encodeURIComponent(next.slug)}`);
+						}}
+					>
+						<span className="meta project__next-label">Next project</span>
+						<span className="project__next-title">{next.title}</span>
+					</Link>
+				) : (
+					<div className="project__next project__soon">
+						<span className="meta project__next-label">The end — for now</span>
+						<p className="project__soon-title">New work is brewing</p>
+						<p className="project__soon-note">
+							Fresh projects are in the pipeline. Come back soon to see what
+							I&apos;m making.
+						</p>
+					</div>
+				)}
 			</div>
 		</main>
 	);

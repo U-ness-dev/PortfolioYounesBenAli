@@ -73,15 +73,17 @@ function WorkRow({ project, index }: { project: Project; index: number }) {
     }
   }, [index, reduced])
 
+  const to = `/work/${encodeURIComponent(project.slug)}`
+
   const go = (e: React.MouseEvent) => {
     e.preventDefault()
-    begin(`/work/${project.slug}`)
+    begin(to)
   }
 
   return (
     <Link
       ref={rowRef}
-      to={`/work/${project.slug}`}
+      to={to}
       className={`work-row ${index % 2 === 0 ? 'work-row--indent' : ''}`}
       onClick={go}
       data-cursor-hover

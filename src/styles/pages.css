@@ -424,6 +424,25 @@
   transform: translateX(0.5rem);
 }
 
+/* Coming soon (after the last project) */
+
+.project__soon-title {
+  margin: 0;
+  font-family: var(--font-display);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  font-size: clamp(2.4rem, 8vw, 6.5rem);
+  line-height: 1;
+  color: var(--text-bright);
+}
+
+.project__soon-note {
+  max-width: 34ch;
+  margin: 1.5rem auto 0;
+  color: var(--secondary);
+  line-height: 1.6;
+}
+
 .project__end {
   padding-block: clamp(3rem, 8vh, 5rem);
 }
