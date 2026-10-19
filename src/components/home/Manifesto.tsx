@@ -3,8 +3,8 @@ import { profile } from "../../data/profile";
 export default function Manifesto() {
 	return (
 		<section className="manifesto container">
-			<span className="meta manifesto__label" data-reveal>
-				01 — Statement
+			<span className="meta section-label manifesto__label" data-reveal>
+				02 — Statement
 			</span>
 			<div className="manifesto__body">
 				{profile.statement.map((p, i) => (

@@ -1,11 +1,14 @@
 import { useEffect, useRef } from "react";
 import { Link, Navigate, useParams } from "react-router-dom";
 import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import InteractiveImage from "../components/InteractiveImage";
 import { useTransition } from "../components/Transition";
 import { getAdjacentProject, getProject } from "../data/projects";
 import { useDevicePrefs } from "../hooks/useDevicePrefs";
 import { useScrollReveals } from "../hooks/useScrollReveals";
+
+gsap.registerPlugin(ScrollTrigger);
 
 export default function ProjectPage() {
 	const { slug: rawSlug } = useParams<{ slug: string }>();
@@ -33,11 +36,11 @@ export default function ProjectPage() {
 		}
 		if (hero) {
 			gsap.to(hero, {
-				yPercent: 10,
+				yPercent: 8,
 				ease: "none",
 				scrollTrigger: {
 					trigger: hero,
-					start: "top top",
+					start: "top bottom",
 					end: "bottom top",
 					scrub: true,
 				},
@@ -49,6 +52,13 @@ export default function ProjectPage() {
 
 	const next = getAdjacentProject(project.slug);
 
+	const meta = [
+		{ label: "Year", value: project.year },
+		{ label: "Role", value: project.role },
+		{ label: "Disciplines", value: project.disciplines.join(", ") },
+		{ label: "Tools", value: project.tools.join(", ") },
+	];
+
 	return (
 		<main className="project" ref={ref}>
 			<div className="container">
@@ -57,34 +67,11 @@ export default function ProjectPage() {
 					className="project__back"
 					onClick={(e) => {
 						e.preventDefault();
-						begin("/#work");
+						begin("/#work", { x: e.clientX, y: e.clientY });
 					}}
 				>
 					Index
 				</Link>
-
-				<div className="project__meta" data-reveal>
-					<div className="project__meta-row">
-						<span className="meta project__meta-label">Year</span>
-						<span className="meta project__meta-value">{project.year}</span>
-					</div>
-					<div className="project__meta-row">
-						<span className="meta project__meta-label">Role</span>
-						<span className="meta project__meta-value">{project.role}</span>
-					</div>
-					<div className="project__meta-row">
-						<span className="meta project__meta-label">Disciplines</span>
-						<span className="meta project__meta-value">
-							{project.disciplines.join(", ")}
-						</span>
-					</div>
-					<div className="project__meta-row">
-						<span className="meta project__meta-label">Tools</span>
-						<span className="meta project__meta-value">
-							{project.tools.join(", ")}
-						</span>
-					</div>
-				</div>
 
 				<header className="project__head">
 					<div className="project__kicker">
@@ -96,10 +83,22 @@ export default function ProjectPage() {
 					<p className="project__subtitle" data-reveal>
 						{project.subtitle}
 					</p>
+				</header>
+
+				<div className="project__intro">
 					<p className="project__statement" data-reveal>
 						{project.statement}
 					</p>
-				</header>
+
+					<dl className="project__meta">
+						{meta.map((row) => (
+							<div className="project__meta-row" key={row.label} data-reveal>
+								<dt className="meta project__meta-label">{row.label}</dt>
+								<dd className="project__meta-value">{row.value}</dd>
+							</div>
+						))}
+					</dl>
+				</div>
 			</div>
 
 			<div className="container project__hero" data-reveal>
@@ -146,7 +145,10 @@ export default function ProjectPage() {
 						className="project__next"
 						onClick={(e) => {
 							e.preventDefault();
-							begin(`/work/${encodeURIComponent(next.slug)}`);
+							begin(`/work/${encodeURIComponent(next.slug)}`, {
+								x: e.clientX,
+								y: e.clientY,
+							});
 						}}
 					>
 						<span className="meta project__next-label">Next project</span>

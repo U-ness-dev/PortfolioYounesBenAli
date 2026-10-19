@@ -47,7 +47,7 @@ export default function Contact() {
     <section className="contact container" id="contact">
       <div className="contact__inner">
         <div className="contact__kicker" data-reveal>
-          <span className="meta">03 — Contact</span>
+          <span className="meta section-label">04 — Contact</span>
           <span className="meta">{profile.availability}</span>
         </div>
 

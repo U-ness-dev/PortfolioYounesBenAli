@@ -1,6 +1,5 @@
 import { useEffect } from 'react'
 import { Route, Routes, useLocation } from 'react-router-dom'
-import Cursor from './components/Cursor'
 import Footer from './components/Footer'
 import Navigation from './components/Navigation'
 import { TransitionProvider } from './components/Transition'
@@ -30,7 +29,6 @@ export default function App() {
         Skip to content
       </a>
       <ScrollManager />
-      <Cursor />
       <Navigation />
       <Routes>
         <Route path="/" element={<HomePage />} />

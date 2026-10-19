@@ -1,21 +1,50 @@
 :root {
-  --bg: #111210;
-  --surface: #171815;
-  --surface-2: #1c1d1a;
-  --text: #d8d5c8;
-  --text-bright: #efece1;
-  --secondary: #6e7168;
-  --line: rgba(216, 213, 200, 0.1);
-  --line-strong: rgba(216, 213, 200, 0.2);
-  --accent: #c9a66b;
+  /* ---- Surfaces & ink (warm ivory + charcoal) ---- */
+  --bg: #f4f1e9;
+  --surface: #ebe6da;
+  --surface-2: #ded8c8;
 
+  --text: #33322e;
+  --text-bright: #171714;
+  --secondary: #615c4e;
+
+  --line: rgba(23, 23, 20, 0.14);
+  --line-strong: rgba(23, 23, 20, 0.3);
+
+  /* ---- One bold accent ---- */
+  --accent: #1d39ff;
+  --accent-soft: rgba(29, 57, 255, 0.12);
+  --on-accent: #f4f1e9;
+
+  /* ---- Type ---- */
   --font-display: 'Space Grotesk', 'Inter', system-ui, sans-serif;
   --font-body: 'Inter', system-ui, sans-serif;
   --font-mono: 'IBM Plex Mono', ui-monospace, monospace;
 
+  /* ---- Spacing scale ---- */
+  --space-3xs: 0.25rem;
+  --space-2xs: 0.5rem;
+  --space-xs: 0.75rem;
+  --space-sm: 1rem;
+  --space-md: 1.5rem;
+  --space-lg: 2.5rem;
+  --space-xl: 4rem;
+  --space-section: clamp(4.5rem, 12vh, 9rem);
+  --space-section-lg: clamp(6rem, 15vh, 12rem);
+
   --pad: clamp(1.25rem, 4vw, 3.5rem);
   --measure: 34em;
+  --measure-narrow: 26em;
 
+  /* ---- Radii & shadow ---- */
+  --radius-sm: 6px;
+  --radius: 12px;
+  --radius-lg: 24px;
+  --shadow-sm: 0 1px 2px rgba(23, 23, 20, 0.05);
+  --shadow-md: 0 18px 44px rgba(23, 23, 20, 0.1);
+  --shadow-lg: 0 30px 70px rgba(23, 23, 20, 0.16);
+
+  /* ---- Motion ---- */
   --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
   --ease-inout: cubic-bezier(0.65, 0, 0.35, 1);
 
@@ -23,7 +52,7 @@
   --speed-med: 0.6s;
   --speed-fast: 0.35s;
 
-  --header-h: 4rem;
+  --header-h: 4.25rem;
 
-  --grain-opacity: 0.05;
+  --grain-opacity: 0.035;
 }

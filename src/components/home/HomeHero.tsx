@@ -12,7 +12,7 @@ export default function HomeHero() {
 
   useEffect(() => {
     const section = ref.current
-    if (!section) return
+    if (!section || reduced) return
 
     const ctx = gsap.context(() => {
       const content = section.querySelector('.home-hero__content')
@@ -21,17 +21,19 @@ export default function HomeHero() {
       const bl = section.querySelector('.home-hero__corner--bl')
       const br = section.querySelector('.home-hero__corner--br')
 
-      gsap.to(content, {
-        yPercent: -18,
-        opacity: 0.1,
-        ease: 'none',
-        scrollTrigger: {
-          trigger: section,
-          start: 'top top',
-          end: 'bottom 30%',
-          scrub: true,
-        },
-      })
+      if (content) {
+        gsap.to(content, {
+          yPercent: -14,
+          opacity: 0.15,
+          ease: 'none',
+          scrollTrigger: {
+            trigger: section,
+            start: 'top top',
+            end: 'bottom 30%',
+            scrub: true,
+          },
+        })
+      }
 
       if (tl) {
         gsap.to(tl, {
@@ -64,29 +66,37 @@ export default function HomeHero() {
     }, section)
 
     return () => ctx.revert()
-  }, [])
+  }, [reduced])
 
   useEffect(() => {
     const section = ref.current
     if (!section || !fine || reduced) return
-    const name = section.querySelector<HTMLHeadingElement>('.home-hero__name')
-    if (!name) return
+    const content = section.querySelector<HTMLDivElement>('.home-hero__content')
+    if (!content) return
 
-    const rot = gsap.quickTo(name, 'rotationY', { duration: 0.9, ease: 'power3.out' })
+    const rot = gsap.quickTo(content, 'rotationY', { duration: 0.9, ease: 'power3.out' })
+    const tx = gsap.quickTo(content, 'x', { duration: 0.9, ease: 'power3.out' })
 
     const onMove = (e: PointerEvent) => {
       const r = section.getBoundingClientRect()
       if (!r.width) return
       const px = (e.clientX - r.left) / r.width - 0.5
-      rot(px * 5)
+      rot(px * 4)
+      tx(px * 24)
+    }
+
+    const onLeave = () => {
+      rot(0)
+      tx(0)
     }
 
     section.addEventListener('pointermove', onMove, { passive: true })
-    section.addEventListener('pointerleave', () => rot(0), { passive: true })
+    section.addEventListener('pointerleave', onLeave, { passive: true })
 
     return () => {
       section.removeEventListener('pointermove', onMove)
-      gsap.killTweensOf(name)
+      section.removeEventListener('pointerleave', onLeave)
+      gsap.killTweensOf(content)
     }
   }, [fine, reduced])
 
@@ -94,6 +104,11 @@ export default function HomeHero() {
     <section className="home-hero" ref={ref}>
       <span className="meta home-hero__corner home-hero__corner--tl">{profile.name}</span>
       <span className="meta home-hero__corner home-hero__corner--tr">{profile.title}</span>
+
+      <span className="home-hero__mark" aria-hidden="true">
+        <span className="home-hero__mark-ring" />
+        <span className="home-hero__mark-glyph">✳</span>
+      </span>
 
       <div className="home-hero__content">
         <h1 className="home-hero__name">

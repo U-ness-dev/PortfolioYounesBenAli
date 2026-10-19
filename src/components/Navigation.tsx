@@ -26,17 +26,17 @@ export default function Navigation() {
     return location.hash
   }, [location.pathname, location.hash])
 
-  const goHome = () => {
+  const goHome = (e: React.MouseEvent) => {
     if (location.pathname === '/') window.scrollTo({ top: 0, behavior: 'smooth' })
-    else begin('/')
+    else begin('/', { x: e.clientX, y: e.clientY })
   }
 
-  const goSection = (hash: string) => {
+  const goSection = (hash: string, e: React.MouseEvent) => {
     if (location.pathname === '/') {
       const el = document.querySelector(hash)
       if (el) el.scrollIntoView({ behavior: 'smooth' })
     } else {
-      begin(hash)
+      begin(hash, { x: e.clientX, y: e.clientY })
     }
   }
 
@@ -52,7 +52,7 @@ export default function Navigation() {
             key={hash}
             className="site-nav__link"
             aria-current={current === hash ? 'page' : undefined}
-            onClick={() => goSection(hash)}
+            onClick={(e) => goSection(hash, e)}
           >
             {label}
           </button>

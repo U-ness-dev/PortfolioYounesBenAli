@@ -5,8 +5,8 @@ export default function About() {
   return (
     <section className="about container" id="about">
       <div className="about__head">
-        <span className="meta" data-reveal>
-          02 — About
+        <span className="meta section-label" data-reveal>
+          03 — About
         </span>
         <span className="meta" data-reveal>
           {profile.name}

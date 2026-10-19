@@ -13,8 +13,8 @@ export default function HomePage() {
   return (
     <main ref={ref}>
       <HomeHero />
-      <Manifesto />
       <WorkIndex />
+      <Manifesto />
       <About />
       <Contact />
     </main>

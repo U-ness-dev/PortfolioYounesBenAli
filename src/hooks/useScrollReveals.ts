@@ -1,37 +1,37 @@
 import { useEffect } from 'react'
-import gsap from 'gsap'
-import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
-gsap.registerPlugin(ScrollTrigger)
-
-export { gsap, ScrollTrigger }
-
+/**
+ * Reveals every `[data-reveal]` element inside the given root when it enters
+ * the viewport. Uses IntersectionObserver + a CSS transition (see base.css),
+ * so content is never left hidden if an animation library fails to load.
+ */
 export function useScrollReveals(rootRef: React.RefObject<HTMLElement | null>) {
   useEffect(() => {
-    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return
+    const root = rootRef.current
+    if (!root) return
 
-    const ctx = gsap.context(() => {
-      const targets = gsap.utils.toArray<HTMLElement>('[data-reveal]')
+    const targets = Array.from(root.querySelectorAll<HTMLElement>('[data-reveal]'))
+    if (targets.length === 0) return
 
-      targets.forEach((el) => {
-        gsap.fromTo(
-          el,
-          { opacity: 0, y: 40 },
-          {
-            opacity: 1,
-            y: 0,
-            duration: 1,
-            ease: 'power3.out',
-            scrollTrigger: {
-              trigger: el,
-              start: 'top 88%',
-              once: true,
-            },
-          },
-        )
-      })
-    }, rootRef.current ?? undefined)
+    const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+    if (prefersReduced || !('IntersectionObserver' in window)) {
+      targets.forEach((el) => el.classList.add('is-visible'))
+      return
+    }
 
-    return () => ctx.revert()
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible')
+            observer.unobserve(entry.target)
+          }
+        })
+      },
+      { rootMargin: '0px 0px -10% 0px', threshold: 0.12 },
+    )
+
+    targets.forEach((el) => observer.observe(el))
+    return () => observer.disconnect()
   }, [rootRef])
 }
