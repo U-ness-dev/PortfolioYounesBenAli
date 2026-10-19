@@ -24,7 +24,7 @@ export default function HomeHero() {
       if (content) {
         gsap.to(content, {
           yPercent: -14,
-          opacity: 0.15,
+          opacity: 0.05,
           ease: 'none',
           scrollTrigger: {
             trigger: section,
@@ -104,11 +104,6 @@ export default function HomeHero() {
     <section className="home-hero" ref={ref}>
       <span className="meta home-hero__corner home-hero__corner--tl">{profile.name}</span>
       <span className="meta home-hero__corner home-hero__corner--tr">{profile.title}</span>
-
-      <span className="home-hero__mark" aria-hidden="true">
-        <span className="home-hero__mark-ring" />
-        <span className="home-hero__mark-glyph">✳</span>
-      </span>
 
       <div className="home-hero__content">
         <h1 className="home-hero__name">
