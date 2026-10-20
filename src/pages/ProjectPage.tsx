@@ -122,18 +122,22 @@ export default function ProjectPage() {
 						<p className="chapter__body" data-reveal>
 							{chapter.body}
 						</p>
-						{chapter.media?.map((m) => (
-							<figure className="chapter__media" key={m.src} data-reveal>
-								<InteractiveImage
-									src={m.src}
-									alt={m.alt}
-									className={m.className}
-								/>
-								<figcaption className="meta chapter__caption">
-									{m.alt}
-								</figcaption>
-							</figure>
-						))}
+						{chapter.media && (
+							<div className="chapter__media">
+								{chapter.media.map((m) => (
+									<figure className="chapter__shot" key={m.src} data-reveal>
+										<InteractiveImage
+											src={m.src}
+											alt={m.alt}
+											className={m.className}
+										/>
+										<figcaption className="meta chapter__caption">
+											{m.alt}
+										</figcaption>
+									</figure>
+								))}
+							</div>
+						)}
 					</section>
 				))}
 			</div>

@@ -178,6 +178,95 @@ export const projects: Project[] = [
 		],
 	},
 	{
+		slug: "3d-renders",
+		title: "3D Renders",
+		subtitle: "Renders and experiments made in Blender",
+		year: "2025",
+		role: "3D design",
+		disciplines: ["3D design"],
+		tools: ["Blender"],
+		summary:
+			"A growing collection of 3D renders and scene experiments made in Blender — mythology weapons, prehistoric props and playful scenes.",
+		statement:
+			"3D Renders is a collection of renders and experiments made in Blender. Each piece focuses on lighting, materials and composition to create a mood and tell a story in a single frame.",
+		media: [
+			{
+				type: "image",
+				src: "/images/DonutDONE.png",
+				alt: "3D Renders — donut render",
+			},
+		],
+		chapters: [
+			{
+				title: "Context",
+				body: "This project collects my renders and experiments made in Blender. It is a space to explore lighting, materials and composition, and to keep pushing the quality of each scene further.",
+			},
+			{
+				title: "Mythology weapons",
+				body: "Renders of weapons inspired by greek mythology — Apollo, Athena, Poseidon and Zeus. Each model was sculpted and shaded in Blender with a focus on materials and dramatic lighting.",
+				media: [
+					{
+						type: "image",
+						src: "/images/ApolloWeapon.png",
+						alt: "Apollo weapon — 3D render",
+					},
+					{
+						type: "image",
+						src: "/images/AthenaWeapon.png",
+						alt: "Athena weapon — 3D render",
+					},
+					{
+						type: "image",
+						src: "/images/PosseidonWeapon.png",
+						alt: "Poseidon weapon — 3D render",
+					},
+					{
+						type: "image",
+						src: "/images/ZeusWeapon.png",
+						alt: "Zeus weapon — 3D render",
+					},
+				],
+			},
+			{
+				title: "Prehistoric",
+				body: "Props and studies for a prehistoric setting — an axe, a simple stick and a stone that blends into the environment.",
+				media: [
+					{
+						type: "image",
+						src: "/images/PrehistoricAxe.png",
+						alt: "Prehistoric axe — 3D render",
+					},
+					{
+						type: "image",
+						src: "/images/Stick.png",
+						alt: "Stick — 3D render",
+					},
+					{
+						type: "image",
+						src: "/images/FakeStone1.png",
+						alt: "Fake stone — 3D render",
+					},
+				],
+			},
+			{
+				title: "Playful renders",
+				body: "Just for fun — a donut and a starfish character, made to practise modelling, texturing and lighting outside of a serious brief.",
+				media: [
+					{
+						type: "image",
+						src: "/images/DonutDONE.png",
+						alt: "Donut — 3D render",
+					},
+					{
+						type: "image",
+						src: "/images/patrick.jpg",
+						alt: "Patrick star — 3D render",
+					},
+				],
+			},
+		],
+	},
+	{
 		slug: "Calmify",
 		title: "Calmify",
 		subtitle: "A meditation app for stress relief",

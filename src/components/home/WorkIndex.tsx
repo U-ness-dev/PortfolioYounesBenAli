@@ -1,10 +1,12 @@
-import type { CSSProperties } from 'react'
+import { useRef, useState, type CSSProperties } from 'react'
 import { Link } from 'react-router-dom'
 import { projects, type Project } from '../../data/projects'
 import { useTransition } from '../Transition'
 import { asset } from '../../lib/asset'
 
 const SPANS = [7, 5, 5, 7, 6, 6]
+const INITIAL_VISIBLE = 3
+const BATCH = 3
 
 function frameType(project: Project): 'logo' | 'screen' | 'photo' {
   const cls = project.media[0]?.className ?? ''
@@ -13,7 +15,17 @@ function frameType(project: Project): 'logo' | 'screen' | 'photo' {
   return 'photo'
 }
 
-function WorkTile({ project, index }: { project: Project; index: number }) {
+function WorkTile({
+  project,
+  index,
+  enter,
+  enterDelay,
+}: {
+  project: Project
+  index: number
+  enter: boolean
+  enterDelay: number
+}) {
   const { begin } = useTransition()
   const image = project.media[0]
   const to = `/work/${encodeURIComponent(project.slug)}`
@@ -28,10 +40,15 @@ function WorkTile({ project, index }: { project: Project; index: number }) {
     <Link
       to={to}
       onClick={go}
-      className="work-tile"
+      className={`work-tile${enter ? ' work-tile--enter' : ''}`}
       data-frame={frameType(project)}
-      data-reveal
-      style={{ '--span': span } as CSSProperties}
+      data-reveal={enter ? undefined : ''}
+      style={
+        {
+          '--span': span,
+          ...(enter ? { animationDelay: `${enterDelay}ms` } : null),
+        } as CSSProperties
+      }
     >
       <div className="work-tile__frame">
         <img
@@ -60,6 +77,24 @@ function WorkTile({ project, index }: { project: Project; index: number }) {
 }
 
 export default function WorkIndex() {
+  const [visibleCount, setVisibleCount] = useState(INITIAL_VISIBLE)
+  const gridRef = useRef<HTMLDivElement | null>(null)
+
+  const remaining = projects.length - visibleCount
+  const shown = projects.slice(0, visibleCount)
+
+  const loadMore = () => {
+    const from = visibleCount
+    setVisibleCount(Math.min(visibleCount + BATCH, projects.length))
+
+    requestAnimationFrame(() => {
+      const first = gridRef.current?.querySelectorAll<HTMLElement>('.work-tile')[from]
+      if (!first) return
+      const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+      first.scrollIntoView({ behavior: reduced ? 'auto' : 'smooth', block: 'start' })
+    })
+  }
+
   return (
     <section className="work container" id="work">
       <div className="work__head">
@@ -76,11 +111,25 @@ export default function WorkIndex() {
         </span>
       </div>
 
-      <div className="work-grid">
-        {projects.map((project, i) => (
-          <WorkTile key={project.slug} project={project} index={i} />
+      <div className="work-grid" ref={gridRef}>
+        {shown.map((project, i) => (
+          <WorkTile
+            key={project.slug}
+            project={project}
+            index={i}
+            enter={i >= INITIAL_VISIBLE}
+            enterDelay={((i - INITIAL_VISIBLE) % BATCH) * 90}
+          />
         ))}
       </div>
+
+      {remaining > 0 && (
+        <div className="work__more" data-reveal>
+          <button type="button" className="work-more" onClick={loadMore}>
+            Show {Math.min(BATCH, remaining)} more
+          </button>
+        </div>
+      )}
     </section>
   )
 }

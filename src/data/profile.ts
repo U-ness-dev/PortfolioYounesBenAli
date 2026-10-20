@@ -39,7 +39,7 @@ export const profile: Profile = {
 	email: "younes.ben.ali.business@gmail.com",
 	phone: "+32 485 60 68 29",
 	socials: [
-		{ label: "Instagram", href: "https://www.instagram.com/yns___bnl/" },
+		{ label: "Instagram", href: "https://www.instagram.com/unes_designs/" },
 		{
 			label: "LinkedIn",
 			href: "https://www.linkedin.com/in/younes-ben-ali-70877b261/",

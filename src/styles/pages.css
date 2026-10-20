@@ -372,6 +372,9 @@
 
 .chapter__media {
   margin-top: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: clamp(1.5rem, 4vh, 2.5rem);
 }
 
 .chapter__media .iimg {

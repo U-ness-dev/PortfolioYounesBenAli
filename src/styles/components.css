@@ -212,6 +212,66 @@
 }
 
 .work-tile {
+  scroll-margin-top: calc(var(--header-h) + 1.5rem);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .work-tile--enter {
+    animation: work-tile-in 0.7s var(--ease-out) both;
+  }
+}
+
+@keyframes work-tile-in {
+  from {
+    opacity: 0;
+    transform: translateY(1.75rem);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.work__more {
+  display: flex;
+  justify-content: center;
+  margin-top: clamp(2.5rem, 5vh, 4rem);
+}
+
+.work-more {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
+  min-height: 48px;
+  padding: 0.85rem 2rem;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--text);
+  background: transparent;
+  border: 1px solid var(--line-strong);
+  border-radius: 100px;
+  cursor: pointer;
+  transition:
+    color 0.35s ease,
+    border-color 0.35s ease,
+    transform 0.35s var(--ease-out);
+}
+
+.work-more::after {
+  content: '+';
+  font-size: 1rem;
+  line-height: 1;
+}
+
+.work-more:hover:not(:disabled) {
+  color: var(--text-bright);
+  border-color: var(--accent);
+  transform: translateY(-2px);
+}
+
+.work-tile {
   display: flex;
   flex-direction: column;
   gap: 1.15rem;
@@ -621,8 +681,9 @@
   align-items: center;
   gap: 0.7rem;
   font-family: var(--font-mono);
-  font-size: 0.75rem;
-  letter-spacing: 0.14em;
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
   color: var(--on-accent);
   background: var(--accent);
